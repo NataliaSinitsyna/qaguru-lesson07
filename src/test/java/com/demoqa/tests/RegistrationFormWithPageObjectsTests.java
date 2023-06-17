@@ -5,6 +5,7 @@ import com.demoqa.pages.TextBoxPage;
 import org.junit.jupiter.api.Test;
 
 public class RegistrationFormWithPageObjectsTests extends TestBase {
+
     RegistrationPage registrationPage = new RegistrationPage();
     @Test
     void successfulFillFormTest() {
