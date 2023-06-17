@@ -3,8 +3,8 @@ package com.demoqa.pages;
 import com.codeborne.selenide.SelenideElement;
 import com.demoqa.pages.components.ResultsOutput;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class TextBoxPage {
     ResultsOutput resultsOutput = new ResultsOutput();
@@ -21,7 +21,12 @@ public class TextBoxPage {
 
         return this;
     }
+    public TextBoxPage removeBanners() {
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
 
+        return this;
+    }
     public TextBoxPage setUserName(String value) {
         userNameInput.setValue(value);
 

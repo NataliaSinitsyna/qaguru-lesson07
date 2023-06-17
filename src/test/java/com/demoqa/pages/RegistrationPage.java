@@ -30,9 +30,15 @@ public class RegistrationPage {
             submitButton = $("#submit")
     ;
 
-    public RegistrationPage openPage() {
+    public RegistrationPage openPage(String value) {
         open("/automation-practice-form");
-        headerPracticeFormText.shouldHave(Condition.text("Student Registration Form"));
+        headerPracticeFormText.shouldHave(Condition.text(value));
+
+        return this;
+    }
+    public RegistrationPage removeBanners() {
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
 
         return this;
     }
